@@ -7,15 +7,12 @@ class ListController extends \BaseController {
 	 */
 	public function getIndex()
 	{
-        if(!Session::has('nickname')){
             $openId=Input::get('openid');
 //            $openId="ouRCyjjiDpLXt9CFGJ5jKNc12vuC";
             $result=$this->Message($openId);
         Session::put('nickname',$result['nickname']);
         Session::put('headurlimage',$result['headurlimage']);
             $this->AutoPraise();
-
-        }
         $an = DB::table('announcement')->orderby('time','desc')->first();//置顶显示的公告
         //return $an;
         //置顶显示的公告
@@ -198,6 +195,8 @@ class ListController extends \BaseController {
         curl_close($ch);
         //打印获得的数据
         $rel = json_decode($output);
+		$rel->data->headimgurl = substr($rel->data->headimgurl, 0, -1)."64";
+
         //return $rel->data->headimgurl;
         $result=array('nickname'=>$rel->data->nickname,"headurlimage"=>$rel->data->headimgurl);
 //        var_dump($result);
