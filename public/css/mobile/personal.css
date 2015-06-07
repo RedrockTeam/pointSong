@@ -1,0 +1,258 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('../../font/iconfont.eot');
+  src: url('../../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../font/iconfont.woff') format('woff'), /* chrome、firefox */ url('../../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../../font/iconfont.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  width: 100%;
+}
+body {
+  margin: 0;
+  background-color: #eee !important;
+  font-family: 'Microsoft YaHei', 'WenQuanYi MicroHei', sans-serif;
+  width: 100%;
+}
+header {
+  height: 130px;
+  width: 100%;
+  background-color: #ff5d3d;
+  padding: 0 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+header span {
+  color: #fff;
+  line-height: 130px;
+  font-size: 60px;
+}
+.personal {
+  height: 460px;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 130px;
+  margin-bottom: 25px;
+}
+.personal .logo {
+  margin: 0 auto;
+  width: 215px;
+}
+.personal img {
+  margin: 45px auto 10px;
+  width: 215px;
+  height: 215px;
+  border-radius: 108px;
+  -o-border-radius: 108px;
+  -ms-border-radius: 108px;
+  -moz-border-radius: 108px;
+  -webkit-border-radius: 108px;
+  border: 1px solid #ccc;
+}
+.personal h1 {
+  font-weight: normal;
+  text-align: center;
+  font-size: 48px;
+}
+.personal p {
+  text-align: center;
+  font-size: 48px;
+  color: #666;
+}
+.title {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #fff;
+  font-size: 48px;
+  height: 150px;
+  line-height: 70px;
+  border-top: 1px solid #ccc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.title span {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  color: #666;
+  margin-right: -15px;
+}
+.title span:first-child {
+  border-right: 1px solid #ccc;
+}
+.title .over {
+  position: relative;
+  top: -70px;
+  width: 50%;
+  overflow: hidden;
+  transition: transform 0.25s linear;
+  -webkit-transition: transform 0.25s linear;
+  -moz-transition: transform 0.25s linear;
+  -ms-transition: transform 0.25s linear;
+  -o-transition: transform 0.25s linear;
+  transition: -webkit-transform 0.25s linear;
+  -webkit-transition: -webkit-transform 0.25s linear;
+  -moz-transition: -webkit-transform 0.25s linear;
+  -ms-transition: -webkit-transform 0.25s linear;
+  -o-transition: -webkit-transform 0.25s linear;
+}
+.title .over .in {
+  width: 200%;
+  transition: transform 0.25s linear;
+  -webkit-transition: transform 0.25s linear;
+  -moz-transition: transform 0.25s linear;
+  -ms-transition: transform 0.25s linear;
+  -o-transition: transform 0.25s linear;
+  transition: -webkit-transform 0.25s linear;
+  -webkit-transition: -webkit-transform 0.25s linear;
+  -moz-transition: -webkit-transform 0.25s linear;
+  -ms-transition: -webkit-transform 0.25s linear;
+  -o-transition: -webkit-transform 0.25s linear;
+}
+.title .over span {
+    color: #ff5d3d;
+    border-bottom: 5px solid #ff5d3d;
+    border-right: none;
+    height: 109px;
+}
+span.click {
+    color: #ff5d3d;
+    border-bottom: 5px solid #ff5d3d;
+    border-right: none;
+    height: 109px;
+}
+.music {
+  padding: 20px 50px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  position: relative;
+}
+.music .top {
+  border-bottom: 1px solid #ccc;
+  height: 135px;
+}
+.music .top .logo {
+  float: left;
+  height: 105px;
+  width: 105px;
+  border-radius: 53px;
+  -o-border-radius: 53px;
+  -ms-border-radius: 53px;
+  -moz-border-radius: 53px;
+  -webkit-border-radius: 53px;
+  border: 1px solid #aaa;
+}
+.music .top .accept {
+  position: absolute;
+  top: 0;
+  right: -15px;
+}
+.music .top h1 {
+  font-size: 48px;
+  margin: 0;
+    position: relative;
+    left:20px
+}
+.music .top .name {
+  color: #666;
+  padding-left: 20px;
+  font-size: 36px;
+}
+.music .top .time {
+  color: #999999;
+  font-size: 36px;
+  float: right;
+}
+.music .center {
+  padding: 20px 0;
+  padding-bottom: 110px;
+  font-size: 36px;
+}
+.music .center .content {
+  color: #666;
+}
+.music .center .button {
+  width: 200px;
+  height: 80px;
+  line-height: 80px;
+  border: 1px solid #ccc;
+  float: right;
+  text-align: center;
+  color: #666;
+  font-size: 36px;
+  margin-top: 20px;
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin-left: 30px;
+  background: -ms-linear-gradient(top, #ffffff, #f8f8f8);
+  background: -moz-linear-gradient(top, #ffffff, #f8f8f8);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f8f8f8));
+  background: -webkit-linear-gradient(top, #ffffff, #f8f8f8);
+  background: -o-linear-gradient(top, #ffffff, #f8f8f8);
+}
+.music .center .button i.iconfont {
+  font-size: 36px;
+}
+.music .center .button.great {
+  color: #FF6E6E;
+}
+.pull {
+  font-size: 48px;
+  width: 100%;
+  line-height: 80px;
+  height: 80px;
+  text-align: center;
+  color: #666;
+  position: absolute;
+  bottom: 30px;
+}
+.swiper-container section {
+  padding-bottom: 120px;
+}
+.err{
+    position: fixed;
+    top: -80px;
+    height: 80px;
+    line-height: 80px;
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+}
+.err.animation{
+    animation: err 2s;
+    -moz-animation: err 2s;
+    -webkit-animation: err 3s;
+    -o-animation: err 2s;
+}
+@-webkit-keyframes err{
+    0% {
+        -webkit-transform:translatey(0);
+    }
+    15%{
+        -webkit-transform:translatey(80px);
+    }
+    85%{
+        -webkit-transform:translatey(80px);
+    }
+    100% {
+        -webkit-transform:translatey(0);
+    }
+}

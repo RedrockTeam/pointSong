@@ -1,0 +1,402 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../font/iconfont.woff') format('woff'), /* chrome、firefox */ url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../font/iconfont.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #eee !important;
+  font-family: 'Microsoft YaHei', 'WenQuanYi MicroHei', sans-serif;
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.title {
+  background-color: #333;
+  height: 130px;
+  box-shadow: 0 2px 1px #ccc;
+}
+.title > div {
+  margin: 0 auto;
+}
+@media (min-width: 1400px) {
+  .title > div {
+    width: 1160px;
+  }
+}
+@media (max-width: 1400px) {
+  .title > div {
+    width: 960px;
+  }
+}
+.title p {
+  float: left;
+  line-height: 130px;
+  font-size: 40px;
+  margin: 0;
+  font-weight: bold;
+  color: #fff;
+}
+.title .searchdiv {
+  width: 330px;
+  float: right;
+  margin-top: 70px;
+}
+.title .searchdiv div {
+  cursor: pointer;
+}
+.main {
+  margin: 0 auto;
+  background-color: #fff;
+}
+@media (min-width: 1400px) {
+  .main {
+    width: 1160px;
+  }
+}
+@media (max-width: 1400px) {
+  .main {
+    width: 960px;
+  }
+}
+.main .menu {
+  width: 220px;
+  background-color: #fff;
+  padding-top: 40px;
+  border: 0;
+  float: left;
+}
+.main .menu tr:hover {
+  border-left: 2px solid red;
+}
+.main .menu tr:last-child td {
+  border-bottom: 1px solid #ddd;
+}
+.main .menu td {
+  height: 55px;
+  line-height: 55px;
+  padding: 0 0 0 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.main .menu td:hover {
+  color: red;
+  padding: 0 0 0 48px;
+}
+.main .menu td i {
+  margin-right: 10px;
+}
+.main .menu .onclick {
+  border-left: 3px solid red !important;
+}
+.main .menu .onclick td {
+  color: red;
+  padding: 0 0 0 47px !important;
+}
+.main section {
+  width: auto;
+  margin-left: 220px;
+  padding: 40px 0 0 30px;
+  background-color: #eee;
+}
+.main section .choose {
+  border: 1px solid #ccc;
+  height: 50px;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.main section .choose select {
+  width: 33.333%;
+  height: 48px;
+  font-size: 18px;
+  float: left;
+  border: none;
+  border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.main section .choose select.select-right {
+  border-left: 1px solid #ccc;
+  border-bottom-right-radius: 5px;
+  -o-border-bottom-right-radius: 5px;
+  -ms-border-bottom-right-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -o-border-top-right-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+.main section .choose select.select-left {
+  border-right: 1px solid #ccc;
+  border-bottom-left-radius: 5px;
+  -o-border-bottom-left-radius: 5px;
+  -ms-border-bottom-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -o-border-top-left-radius: 5px;
+  -ms-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+}
+.main section .hint {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  -o-border-top-left-radius: 5px;
+  -ms-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -o-border-top-right-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  padding: 10px 15px;
+}
+.main section .hint p {
+  margin: 0;
+  line-height: 25px;
+  color: #d9534f;
+}
+.main section table {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: default;
+  color: #333;
+  margin-top: 20px;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.main section table thead tr td:last-child {
+  border-top-right-radius: 5px;
+  -o-border-top-right-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+.main section table th,
+.main section table td {
+  vertical-align: middle;
+  font-weight: normal;
+  text-align: center;
+}
+.main section table tr td {
+  border: 1px solid #ccc !important;
+}
+@media (min-width: 1400px) {
+  .main section table tr td {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1400px) {
+  .main section table tr td {
+    font-size: 12px;
+  }
+}
+.main section table tr th {
+  padding: 16px 8px;
+  font-family: 宋体;
+  font-size: 12px;
+}
+.main section table tr .musicName {
+  width: 15%;
+}
+.main section table tr .contain {
+  width: 21%;
+}
+.main section table tr .contain_left {
+  text-align: left;
+}
+.main section table tr .singer,
+.main section table tr .you {
+  width: 10%;
+}
+.main section table tr .time {
+  width: 12%;
+}
+.main section table tr .excellent {
+  width: 10%;
+}
+.main section table tr .operation {
+  width: 10%;
+}
+.main section table tr .played {
+  color: #999;
+}
+.main section table tr .play,
+.main section table tr .cancel {
+  cursor: pointer;
+}
+.main section table tr .play:hover,
+.main section table tr .cancel:hover {
+  text-decoration: underline;
+}
+.main section table tr .num {
+  width: 10%;
+}
+.main section table tr .music {
+  width: 30%;
+}
+.main section table tr .musicTime,
+.main section table tr .excellentNum,
+.main section table tr .comprehensive {
+  width: 20%;
+}
+.main section .section {
+  width: auto;
+  background-color: #fff;
+  font-size: 16px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.main section .section .top {
+  font-size: 18px;
+  line-height: 42px;
+  height: 42px;
+  padding-left: 10px;
+  border-bottom: 1px solid #ccc;
+  background: -ms-linear-gradient(top, #ffffff, #f8f8f8);
+  background: -moz-linear-gradient(top, #ffffff, #f8f8f8);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f8f8f8));
+  background: -webkit-linear-gradient(top, #ffffff, #f8f8f8);
+  background: -o-linear-gradient(top, #ffffff, #f8f8f8);
+  border-top-left-radius: 5px;
+  -o-border-top-left-radius: 5px;
+  -ms-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -o-border-top-right-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+.main section .section .top span {
+  color: #FF9933;
+  font-size: 14px;
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+  font-family: 宋体;
+}
+.main section .section-form {
+  height: 400px;
+}
+.main section .section-form .form {
+  padding: 20px 40px;
+}
+.main section .section-form .form input {
+  margin-bottom: 20px;
+  width: 300px;
+}
+.main section .section-form .form textarea {
+  resize: none;
+}
+.main section .section-form .form button {
+  margin-top: 20px;
+  float: right;
+  width: 82px;
+}
+.main section .notice {
+  padding: 20px 20px 50px 10px;
+  font-size: 14px;
+  font-family: 宋体;
+  border-bottom: 1px solid #ccc;
+}
+.main section .notice .notice-title {
+  text-indent: 2em;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+.main section .notice .notice-content {
+  text-indent: 2em;
+  margin-bottom: 30px;
+}
+.main section .notice .notice-time {
+  float: right;
+  color: #666;
+}
+.main section .notice:last-child {
+  border-bottom: none;
+}
+.main .statistics .form-control {
+  width: 50%;
+}
+.main .statistics select.select-right {
+  border-left: none !important;
+}
+.main .illegal .section-form {
+  height: auto;
+}
+.main .illegal .section .form input,
+.main .illegal .section .form button {
+  float: left;
+}
+.main .illegal .section .form button {
+  margin: 0 0 0 20px;
+}
+.main .illegal .section .form .clear {
+  margin-top: 80px;
+}
+.main .illegal .section .form .illegal-word {
+  margin-top: 20px;
+}
+.main .illegal .section .form .illegal-word div {
+  float: none;
+  margin: 0 20px 20px 0;
+  background-image: none;
+  width: auto;
+  padding: 6px 24px;
+  position: relative;
+}
+.main .illegal .section .form .illegal-word div i {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  font-size: 18px;
+  display: none;
+}
+.main .illegal .section .form .illegal-word div:hover i {
+  display: block;
+}
+footer {
+  width: 100%;
+  color: #333;
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+footer a {
+  color: #333;
+  text-decoration: none;
+}
