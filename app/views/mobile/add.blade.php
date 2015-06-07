@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="{{action('ListController@getIndex')}}"><span>电台点歌</span></a>
+        <a href="{{action('ListController@getIndex')}}"><img src='{{__PUBLIC__.'/img/back.png'}}' alt="返回"/><span>电台点歌</span></a>
         <a href="{{action('PersonalController@getIndex')}}"><i class="iconfont">&#xe834;</i></a>
     </header>
     <section class="title">

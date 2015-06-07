@@ -46,7 +46,7 @@
 .login-body{
 	margin:0 auto;
 	text-align: center;
-	background-color: #1abc9c;
+	/*background-color: #1abc9c;*/
 }
 .login-form .control-group {
   margin-bottom: 6px;

@@ -46,6 +46,10 @@ header i.iconfont {
   font-size: 80px;
   float: right;
 }
+header img {
+    float: left;
+    padding-top: 30px;
+}
 section.title {
   font-size: 36px;
   padding: 10px 50px;

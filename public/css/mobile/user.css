@@ -62,7 +62,7 @@ header i.iconfont {
   width: 33.33%;
   line-height: 110px;
   color: #999;
-  font-size: 48px;
+  font-size: 40px;
   text-align: center;
   margin-right: -5px;
 }
@@ -148,6 +148,7 @@ span.click {
   padding: 0;
   margin: 10px 0;
   text-indent: 0;
+    color:#444;
 }
 .main .notice .center .noticeContent {
   margin: 0;
@@ -183,6 +184,7 @@ span.click {
   margin: 0;
     position: relative;
     left:20px;
+    color:#444;
 }
 .music .top .name {
   color: #666;

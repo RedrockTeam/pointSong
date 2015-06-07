@@ -38,6 +38,10 @@ header span {
   line-height: 130px;
   font-size: 60px;
 }
+header img {
+    float: left;
+    padding-top: 30px;
+}
 .personal {
   height: 460px;
   width: 100%;
@@ -90,7 +94,10 @@ header span {
   margin-right: -15px;
 }
 .title span:first-child {
-  border-right: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.title span:last-child {
+    border-left: 1px solid #ccc;
 }
 .title .over {
   position: relative;
@@ -130,7 +137,8 @@ header span {
 span.click {
     color: #ff5d3d;
     border-bottom: 5px solid #ff5d3d;
-    border-right: none;
+    border-right: none !important;
+    border-left: none !important;
     height: 109px;
 }
 .music {
@@ -164,6 +172,7 @@ span.click {
   margin: 0;
     position: relative;
     left:20px
+    color:#444;
 }
 .music .top .name {
   color: #666;
