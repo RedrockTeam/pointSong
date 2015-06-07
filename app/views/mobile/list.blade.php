@@ -32,15 +32,21 @@
                     <div class="top">
                         <span class="name"><i class="iconfont">&#xe6a7;</i>公告</span>
                         <span class="time">
-                        {{dd($message);}}
-                               {{--{{date("Y-m-d", $message->time)}}--}}
-</span>
+                            @if($message!=null)
+                                {{date("Y-m-d", $message->time)}}
+                            @endif
+                        </span>
                     </div>
                     <div class="center">
                         <p class="noticeTitle">
-                             {{$message->title}} </p>
+                            @if($message!=null)
+                                {{$message->title}}
+                             @endif
+                        </p>
                         <p class="noticeContent">
-                        {{$message->content}}
+                            @if(message!=null)
+                                {{$message->content}}
+                            @endif
                         </p>
                     </div>
                 </div>

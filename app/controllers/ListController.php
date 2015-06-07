@@ -17,7 +17,7 @@ class ListController extends \BaseController {
 
         }
         $an = DB::table('announcement')->orderby('time','desc')->first();//置顶显示的公告
-        return $an;
+        //return $an;
         //置顶显示的公告
         return View::make('mobile.list')->with('message',$an);
 //       $a= Session::get('nickname');
