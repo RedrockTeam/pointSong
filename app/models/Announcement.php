@@ -12,7 +12,7 @@ class Announcement extends Eloquent implements UserInterface, RemindableInterfac
      *
      * @var string
      */
-    protected $table = 'Announcement';
+    protected $table = 'announcement';
 
     /**
      * The attributes excluded from the model's JSON form.
