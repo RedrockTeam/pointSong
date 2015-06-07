@@ -67,8 +67,10 @@ class ListController extends \BaseController {
                     $addmusic->head_image=$head_image;
                     $k = $addmusic->save();
                     if ($k == true) {
+                       $openId=Session::get('openId');
+                       $this->ok($openId);
                         return $k = json_encode($k);
-                    } else {
+						} else {
                         return $k = json_encode(100);
                     }
                }
@@ -229,5 +231,20 @@ class ListController extends \BaseController {
         //return $b;
 
 }
+
+ public function ok($openId){
+        $url = "http://hongyan.cqupt.edu.cn/wechatsend/index.php?s=/Home/Api/sendCustomTimeOut";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // post数据
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 1);
+        // post的变量
+        curl_setopt($ch, CURLOPT_POSTFIELDS, 'openid='.$openId.'&message=您已成功点歌&time=20');
+        curl_exec($ch);
+        curl_close($ch);
+    }
 }
 
