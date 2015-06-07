@@ -44,7 +44,7 @@
                              @endif
                         </p>
                         <p class="noticeContent">
-                            @if(message!=null)
+                            @if($message!=null)
                                 {{$message->content}}
                             @endif
                         </p>
