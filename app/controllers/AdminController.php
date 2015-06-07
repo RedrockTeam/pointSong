@@ -5,7 +5,7 @@ class AdminController extends \BaseController {
     public function login(){
         Session::put('admin_is_login',0);
 
-        return View::make('Admin.login');
+        return View::make('admin.login');
 
     }
 
