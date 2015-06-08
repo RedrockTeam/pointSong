@@ -111,9 +111,10 @@ section.section-form .form .checkbox {
   line-height: 80px;
 }
 section.section-form .form .checkbox input {
+    height:35px;
   width: 35px;
   position: absolute;
-  top: -2px;
+  top: 30px;
   left: -5px;
 }
 .err{
