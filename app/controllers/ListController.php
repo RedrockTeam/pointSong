@@ -7,12 +7,15 @@ class ListController extends \BaseController {
 	 */
 	public function getIndex()
 	{
+	        if(Session::get('headurlimage')==null){
+
             $openId=Input::get('openid');
 //            $openId="ouRCyjjiDpLXt9CFGJ5jKNc12vuC";
             $result=$this->Message($openId);
         Session::put('nickname',$result['nickname']);
         Session::put('headurlimage',$result['headurlimage']);
             $this->AutoPraise();
+			}
         $an = DB::table('announcement')->orderby('time','desc')->first();//置顶显示的公告
         //return $an;
         //置顶显示的公告

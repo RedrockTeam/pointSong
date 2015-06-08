@@ -9,7 +9,7 @@ class PersonalController extends \BaseController {
 	{
         $send_name=Session::get('nickname');
         $img=Session::get('headurlimage');
-        $praise=DB::table('praise')->where('user_id',$send_name)->count(); //显示用户点赞数
+        $praise=DB::table('music')->select(DB::raw('sum(goods) as excellentNum'))->where('send_name',$send_name)->groupby('send_name')->get();//显示用户点赞数
         $push=DB::table('music')->where('send_name',$send_name)->count(); //显示用户发表过点歌数量
         $used=DB::table('music')->where('send_name',$send_name)->where('status','1')->count();//用户发表的已经被采纳的点歌数量
 		return View::make('mobile.personal')->with(array('name'=>$send_name,'img'=>$img,'used'=>$used,'push'=>$push,'praise'=>$praise));

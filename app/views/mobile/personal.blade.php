@@ -19,7 +19,13 @@
         <img src={{$img}} alt="头像"/>
     </div>
     <h1>{{$name}}</h1>
-    <p>累积点赞次数：{{$praise}}</p>
+    <p>累积点赞次数：
+	@if($praise!=null)
+    {{$praise[0]->excellentNum}}
+    @else
+    0
+    @endif
+	</p>
 </section>
 <section class="title">
     <span num="0" class="click">已发布（{{$push}}）</span>
