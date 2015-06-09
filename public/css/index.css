@@ -31,6 +31,11 @@ body {
 .title > div {
   margin: 0 auto;
 }
+#set{
+    float: right;
+    margin-top: 70px;
+    margin-left: 20px;
+}
 @media (min-width: 1400px) {
   .title > div {
     width: 1160px;
@@ -53,6 +58,7 @@ body {
   width: 330px;
   float: right;
   margin-top: 70px;
+    margin-left: 20px;
 }
 .title .searchdiv div {
   cursor: pointer;

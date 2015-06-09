@@ -11,6 +11,11 @@
 <header class="title">
     <div>
         <p>电台点歌-后台管理</p>
+		@if($status==0)
+        <button type="button" class="btn btn-default" id="set" value="0">开启点歌</button>
+       @else
+       <button type="button" class="btn btn-default" id="set" value="1">关闭点歌</button>
+       @endif
         <div class="searchdiv input-group">
             <input type="text" name="search" id="search" class="search form-control" placeholder="请输入歌名"/>
             <div class="input-group-addon" id="s1">搜索</div>
@@ -203,6 +208,7 @@
             });
         });
    });
+        var listStatus="{{action('MusicController@getStatus')}}";
         var  wordCreate="{{action('WordController@postCreate')}}";
         var  wordDelete="{{action('WordController@getDelete')}}";
         var  wordIndex="{{action('WordController@getIndex')}}";

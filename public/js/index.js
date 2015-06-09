@@ -9,7 +9,34 @@
 //    minView: 2,
 //    forceParse: 0
 //});
+$("#set").on('click',function(){
+    var status;
+    var now=$("#set").val();
+    if(now!=0){
+        status=0;
+    }else{
+        status=1;
+    }
+    $.ajax({
+        url: listStatus,
+        type: "GET",
+        data:{status:status},
+        //dataType: "json",
+        // contentType: "application/json;charset=utf-8",
+        success: function (msg) {
+            if(msg==100){
+                $("#set").val("0").text("开启点歌");
+            }
+            else{
+                $("#set").val("1").text("关闭点歌");
+            }
+        },
+        error: function (xhr) {
+            alert("连接服务器失败");
+        }
+    });
 
+})
 $(".main section").css("min-height",($(window).height()-275)+"px");
 $(document).ready(function() {
     function getmusic(){   /*获取歌曲信息的方法 在后面根据下拉框的改变调用这个方法*/
