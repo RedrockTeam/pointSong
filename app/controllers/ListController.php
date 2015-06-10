@@ -19,7 +19,9 @@ class ListController extends \BaseController {
         $an = DB::table('announcement')->orderby('time','desc')->first();//置顶显示的公告
         //return $an;
         //置顶显示的公告
-        return View::make('mobile.list')->with('message',$an);
+		   $content = DB::table('announcement')->orderby('time', 'desc')->pluck('content');
+        $status=DB::table('status')->orderby('time','desc')->pluck('status');
+        return View::make('mobile.list')->with('message',$an)->with('status',$status)->with('content',$content);
 //       $a= Session::get('nickname');
 //        var_dump($a);
 	}
@@ -47,7 +49,7 @@ class ListController extends \BaseController {
         if(($music==null||$singer==null)||($content==null||$recieve_name==null)){
             return json_encode(100); //如果填写的内容有为空的就返回100；
         }else {
-            if (($this->utf8_strlen($music) > 12 || $this->utf8_strlen($singer)>6) || ($this->utf8_strlen($recieve_name) > 6 || $this->utf8_strlen($content) > 60)) {
+            if (($this->utf8_strlen($music) > 30 || $this->utf8_strlen($singer)>25) || ($this->utf8_strlen($recieve_name) > 6 || $this->utf8_strlen($content) > 60)) {
                 return json_encode(101);//如果填写的内容超过规定字数返回101
             } else {
                 if(($this->illegal($music) >0  || $this->illegal($singer)>0) || ($this->illegal($recieve_name) > 0 || $this->illegal($content) > 0)){

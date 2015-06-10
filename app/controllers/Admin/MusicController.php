@@ -13,7 +13,11 @@ class MusicController extends \BaseController {
        // $list=DB::table('music')->skip(5)->take(5)->get();
        // $list=DB::table('music')->limit(0,5);
         //$list=json_encode($list);
-		return View::make("admin.index");
+	    $status = DB::table('status')->orderby('time', 'desc')->pluck('status');
+        if($status==null){
+            $status=0;
+        }
+		return View::make("admin.index")->with('status',$status);
 	}
 
 
@@ -200,7 +204,19 @@ public function getUse(){
     return  $list=json_encode($list);
     }
 
-
+public function getStatus()
+{
+      $status=$_GET['status'];
+    $change = new Status;
+    $change->status = $status;
+    $change->time = date('Y-m-d H:i:s', time());
+     $change->save();
+    if($status==0){
+        return json_encode(100);
+    }else{
+        return json_encode(200);
+    }
+}
 }
 
 
