@@ -74,6 +74,8 @@
 </body>
 <script src="{{__PUBLIC__.'/js/mobile/swiper.jquery.min.js'}}"></script>
 <script src="{{__PUBLIC__.'/js/mobile/user.js'}}"></script>
+<script src="{{__PUBLIC__.'/js/weixin.js'}}"></script>
+
 <script>
         var  listShow="{{action('ListController@getShow')}}";
         var  listPraise="{{action('ListController@getPraise')}}";
@@ -83,6 +85,35 @@
           alert("亲~点歌台现已关闭，开放时间另行通知，详情请看公告哦");
           $(".Song").remove();
        }
+	   
+	   
+        wx.config({
+        	    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        	    appId: 'wx81a4a4b77ec98ff4', // 必填，公众号的唯一标识
+        	    timestamp: "{{$Js['timestamp']}}", // 必填，生成签名的时间戳
+        	    nonceStr: "{{$Js['string']}}", // 必填，生成签名的随机串
+        	    signature: "{{$Js['signature']}}",// 必填，签名，见附录1
+        	    jsApiList: [
+        	    	'onMenuShareTimeline',
+        	    	'onMenuShareAppMessage',
+        	    ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        	});
+
+	   
+	   wx.ready(function(){
+        				wx.onMenuShareTimeline({
+        				    title: '快来给你的朋友点歌吧!', // 分享标题
+        				    link:"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2F202.202.43.41%2FpointSong%2Fpublic%2Findex&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+                            imgUrl:imgUrl+"/share.png",
+        				    success: function () {
+        						alert('分享成功!');
+        				        // 用户确认分享后执行的回调函数
+        				    },
+        				    cancel: function () {
+        				        // 用户取消分享后执行的回调函数
+        				    }
+        				})
+        			});
        
 </script>
 </html>
