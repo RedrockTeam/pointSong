@@ -75,14 +75,15 @@
 <script src="{{__PUBLIC__.'/js/mobile/swiper.jquery.min.js'}}"></script>
 <script src="{{__PUBLIC__.'/js/mobile/user.js'}}"></script>
 <script>
+        var  listShow="{{action('ListController@getShow')}}";
+        var  listPraise="{{action('ListController@getPraise')}}";
+        var imgUrl="{{__PUBLIC__.'/img'}}";
        var  status="{{$status}}";
        var notice = "{{$content}}";
        if(status == 0){
           alert(notice);
           $(".Song").remove();
        }
-        var  listShow="{{action('ListController@getShow')}}";
-        var  listPraise="{{action('ListController@getPraise')}}";
-        var imgUrl="{{__PUBLIC__.'/img'}}";
+       
 </script>
 </html>
