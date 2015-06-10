@@ -79,9 +79,8 @@
         var  listPraise="{{action('ListController@getPraise')}}";
         var imgUrl="{{__PUBLIC__.'/img'}}";
        var  status="{{$status}}";
-       var notice = "{{$content}}";
        if(status == 0){
-          alert(notice);
+          alert("亲~点歌台现已关闭，开放时间另行通知，详情请看公告哦");
           $(".Song").remove();
        }
        
