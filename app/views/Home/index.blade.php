@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+<title>快来为朋友点歌吧!^_^</title>
 </head>
 <body >
    <table border="2">
