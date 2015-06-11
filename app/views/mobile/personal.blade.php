@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.4, user-scalable=no">
-	<title>重邮点歌台</title>
+	<title>快来为你的小伙伴点歌吧！</title>
     <script type="text/javascript" src="{{__PUBLIC__.'/js/jquery-2.1.3.min.js'}}"></script>
     <link href="{{__PUBLIC__.'/css/bootstrap.min.css'}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{__PUBLIC__.'/css/mobile/swiper.min.css'}}">
@@ -12,7 +12,7 @@
 
 <body>
 <header>
-    <a href="{{action('ListController@getIndex')}}"><img src='{{__PUBLIC__.'/img/back.png'}}' alt="返回"/><span>电台点歌</span></a>
+    <a href="{{action('ListController@getIndex')}}"><img src='{{__PUBLIC__.'/img/back.png'}}' alt="返回"/><span>返回首页</span></a>
 </header>
 <section class="personal">
     <div class="logo">
@@ -120,7 +120,7 @@ var imgUrl="{{__PUBLIC__.'/img'}}";
 
 wx.ready(function(){
     wx.onMenuShareTimeline({
-        title: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享标题
+        title: '重邮点歌台：快来为你的小伙伴点歌吧！', // 分享标题
         link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
         imgUrl: "http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png",
         success: function () {
@@ -131,7 +131,7 @@ wx.ready(function(){
     });
     wx.onMenuShareAppMessage({
         title: '重邮点歌台', // 分享标题
-        desc: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享描述
+        desc: '重邮点歌台：快来为你的小伙伴点歌吧！', // 分享描述
         link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
         imgUrl: 'http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png', // 分享图标
         type: '', // 分享类型,music、video或link，不填默认为link
@@ -145,7 +145,7 @@ wx.ready(function(){
     });
     wx.onMenuShareQQ({
         title: '重邮点歌台', // 分享标题
-        desc: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享描述
+        desc: '重邮点歌台：快来为你的小伙伴点歌吧！', // 分享描述
         link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
         imgUrl: 'http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png', // 分享图标
         success: function () {
