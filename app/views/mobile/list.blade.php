@@ -84,20 +84,20 @@ var bind="{{$bind}}";
 function bindFun(){
 //    alert(bind);
 //            alert("亲~你还没有绑定学号，绑定后才可以点歌哦!\n关注重邮小帮手（cyxbswx），输入关键字绑定学号，即可！");
-//    if(bind==0) {
-//        alert("亲~你还没有关注重邮小帮手哦，关注后，绑定学号才可以点歌哦!);
-//        $(".Song").remove();
-//        window.location = "http://mp.weixin.qq.com/s?__biz=MjM5NDAzNDM2MQ==&mid=210528498&idx=1&sn=3fe348d335745680fa9a7af77e738d25#rd"
-//        return false;
-//    }else{
-//        if(bind==100){
-//            alert("亲~你还没有绑定学号，绑定后才可以点歌哦!");
-//            $(".Song").remove();
-//            window.location = "http://mp.weixin.qq.com/s?__biz=MjM5NDAzNDM2MQ==&mid=210528498&idx=1&sn=3fe348d335745680fa9a7af77e738d25#rd"
-//            return false;
-//        }
-//    }
-//    return true;
+    if(bind==0) {
+        alert("亲~你还没有关注重邮小帮手哦，关注后，绑定学号才可以点歌哦!);
+        $(".Song").remove();
+        window.location = "http://mp.weixin.qq.com/s?__biz=MjM5NDAzNDM2MQ==&mid=210528498&idx=1&sn=3fe348d335745680fa9a7af77e738d25#rd"
+        return false;
+    }else{
+        if(bind==100){
+            alert("亲~你还没有绑定学号，绑定后才可以点歌哦!");
+            $(".Song").remove();
+            window.location = "http://mp.weixin.qq.com/s?__biz=MjM5NDAzNDM2MQ==&mid=210528498&idx=1&sn=3fe348d335745680fa9a7af77e738d25#rd"
+            return false;
+        }
+    }
+    return true;
 }
 var status = "{{$status}}";
 if(status == 0){
