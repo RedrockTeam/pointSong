@@ -91,7 +91,7 @@ function bindFun(){
         return false;
     }else{
         if(bind==100){
-            alert("亲~你还没有绑定学号，绑定后才可以点歌哦!");
+            alert("亲~你还没有绑定学号，绑定后才可以点歌哦!关注“重邮小帮手”微信（cyxbswx），输入关键字“绑定”即可");
             $(".Song").remove();
             window.location = "http://mp.weixin.qq.com/s?__biz=MjM5NDAzNDM2MQ==&mid=210528498&idx=1&sn=3fe348d335745680fa9a7af77e738d25#rd"
             return false;
