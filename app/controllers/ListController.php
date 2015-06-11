@@ -16,11 +16,15 @@ class ListController extends \BaseController
             $openId = $this->Open($code);
 //            var_dump($openId);
             $result = $this->Message($openId);
+            Session::put('openId',$openId);
             Session::put('nickname', $result['nickname']);
             Session::put('headurlimage', $result['headurlimage']);
             $this->AutoPraise();
         }
-
+        $code = Input::get('code');
+        if(!$code) return Redirect::to($this->oauth2Url);
+        $openId = $this->Open($code);
+        $bind=$this->Bind($openId);
         $address = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $data = $this->Share($address);
         $an = DB::table('announcement')->orderby('time', 'desc')->first();//置顶显示的公告
@@ -28,7 +32,7 @@ class ListController extends \BaseController
         //置顶显示的公告
         $content = DB::table('announcement')->orderby('time', 'desc')->pluck('content');
         $status = DB::table('status')->orderby('time', 'desc')->pluck('status');
-        return View::make('mobile.list')->with('message', $an)->with('status', $status)->with('content', $content)->with('Js', $data);
+        return View::make('mobile.list')->with('message', $an)->with('status', $status)->with('content', $content)->with('Js', $data)->with('bind',$bind);
 //       $a= Session::get('nickname');
 //        var_dump($a);
     }
@@ -339,6 +343,36 @@ class ListController extends \BaseController
         return $openid;
 
     }
-
+    public function Bind($openId){
+        $url = "http://Hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/Api/Api/bindVerify";
+        $timestamp = time();
+        $string = "";
+        $arr = "abcdefghijklmnopqistuvwxyz0123456789ABCDEFGHIGKLMNOPQISTUVWXYZ";
+        for ($i=0; $i<16; $i++) {
+            $y = rand(0,41);
+            $string .= $arr[$y];
+        }
+        $secret = sha1(sha1($timestamp).md5($string).'redrock');
+        $post_data = array (
+            "timestamp" => $timestamp,
+            "string" => $string,
+            "secret" => $secret,
+            "openid" => $openId,
+            "token" => "gh_68f0a1ffc303",
+        );
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // post数据
+        curl_setopt($ch, CURLOPT_POST, 1);
+        // post的变量
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        //打印获得的数据
+        $result = json_decode($output);
+        $bind=$result->status ;
+        return $bind;
+    }
 }
 

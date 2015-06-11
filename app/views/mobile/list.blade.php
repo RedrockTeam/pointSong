@@ -3,14 +3,14 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.4, user-scalable=no">
-<title>快来为朋友点歌吧! ^_^</title>
+    <title>快来为你的小伙伴点歌吧！</title>
 	<script type="text/javascript" src="{{__PUBLIC__.'/js/jquery-2.1.3.min.js'}}"></script>
     <link  href="{{__PUBLIC__.'/css/swiper.min.css'}}" rel="stylesheet" type="text/css">
     <link href="{{__PUBLIC__.'/css/mobile/user.css'}}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
-        <span>电台点歌</span>
+        <span>重邮点歌台</span>
         <a href="{{action('PersonalController@getIndex')}}"><i class="iconfont">&#xe834;</i></a>
     </header>
     <section class="title">
@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="Song">
-        <a href="{{action('ListController@getAdd')}}">点歌</a>
+        <a onclick="return bindFun()" href="{{action('ListController@getAdd')}}">点歌</a>
     </div>
 </body>
 <script src="{{__PUBLIC__.'/js/mobile/swiper.jquery.min.js'}}"></script>
@@ -80,10 +80,18 @@
 var listShow = "{{action('ListController@getShow')}}";
 var listPraise = "{{action('ListController@getPraise')}}";
 var imgUrl = "{{__PUBLIC__.'/img'}}";
+var bind="{{$bind}}";
+function bindFun(){
+    if(bind!=200){
+        alert("亲~你还没有绑定学号，绑定后才可以点歌哦!\n关注重邮小帮手（cyxbswx）,输入关键字绑定学号，即可！");
+        $(".Song").remove();
+        return false;
+    }
+}
 var status = "{{$status}}";
 if(status == 0){
-  alert("亲~点歌台现已关闭，开放时间另行通知，详情请看公告哦");
-  $(".Song").remove();
+    alert("亲~点歌台现已关闭，开放时间另行通知，详情请看公告哦");
+    $(".Song").remove();
 }
 wx.config({
     debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -99,15 +107,41 @@ wx.config({
 
 wx.ready(function(){
     wx.onMenuShareTimeline({
-        title: '快来给你的朋友点歌吧!', // 分享标题
+        title: '重邮点歌台：快来为你的小伙伴点歌吧！', // 分享标题
         link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
-        imgUrl: imgUrl + "/share.png",
+        imgUrl: "http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png",
         success: function () {
             alert('分享成功!');// 用户确认分享后执行的回调函数
         },
         cancel: function () {// 用户取消分享后执行的回调函数
         }
-    })
+    });
+    wx.onMenuShareAppMessage({
+        title: '重邮点歌台', // 分享标题
+        desc: '重邮点歌台：快来为你的小伙伴点歌吧！', // 分享描述
+        link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+        imgUrl: 'http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png', // 分享图标
+        type: '', // 分享类型,music、video或link，不填默认为link
+        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        success: function () {
+            alert('分享成功!');// 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    wx.onMenuShareQQ({
+        title: '重邮点歌台', // 分享标题
+        desc: '重邮点歌台：快来为你的小伙伴点歌吧！', // 分享描述
+        link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+        imgUrl: 'http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png', // 分享图标
+        success: function () {
+            alert('分享成功!');// 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
 });
 </script>
 </html>
