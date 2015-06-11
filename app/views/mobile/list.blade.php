@@ -82,7 +82,6 @@ var listPraise = "{{action('ListController@getPraise')}}";
 var imgUrl = "{{__PUBLIC__.'/img'}}";
 var bind="{{$bind}}";
 function bindFun(){
-
 //    alert(bind);
 //            alert("亲~你还没有绑定学号，绑定后才可以点歌哦!\n关注重邮小帮手（cyxbswx），输入关键字绑定学号，即可！");
 //    if(bind==0) {
@@ -98,7 +97,7 @@ function bindFun(){
 //            return false;
 //        }
 //    }
-//    return true;Z
+//    return true;
 }
 var status = "{{$status}}";
 if(status == 0){
