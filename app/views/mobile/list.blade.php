@@ -80,6 +80,11 @@
 var listShow = "{{action('ListController@getShow')}}";
 var listPraise = "{{action('ListController@getPraise')}}";
 var imgUrl = "{{__PUBLIC__.'/img'}}";
+var bind="{{$bind}}";
+if(bind!=200){
+alert("亲~您还没有绑定学号，绑定后才可以点歌哦");
+          $(".Song").remove();
+}
 var status = "{{$status}}";
 if(status == 0){
   alert("亲~点歌台现已关闭，开放时间另行通知，详情请看公告哦");
