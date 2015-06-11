@@ -2,7 +2,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.4, user-scalable=no">
-    <title>快来为朋友点歌吧! ^_^</title>
+    <title>重邮点歌台</title>
 	    <script type="text/javascript" src="{{ __PUBLIC__.'/js/mobile/jquery-2.1.3.min.js'}}"></script>
     <link href="{{ __PUBLIC__.'/css/mobile/bootstrap.min.css'}}" rel="stylesheet" type="text/css">
     <link href="{{ __PUBLIC__.'/css/mobile/music.css'}}" rel="stylesheet" type="text/css">

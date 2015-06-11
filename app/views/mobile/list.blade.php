@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.4, user-scalable=no">
-<title>快来为朋友点歌吧! ^_^</title>
+    <title>重邮点歌台</title>
 	<script type="text/javascript" src="{{__PUBLIC__.'/js/jquery-2.1.3.min.js'}}"></script>
     <link  href="{{__PUBLIC__.'/css/swiper.min.css'}}" rel="stylesheet" type="text/css">
     <link href="{{__PUBLIC__.'/css/mobile/user.css'}}" rel="stylesheet" type="text/css">
@@ -99,7 +99,7 @@ wx.config({
 
 wx.ready(function(){
     wx.onMenuShareTimeline({
-        title: '快来给你的朋友点歌吧!', // 分享标题
+        title: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享标题
         link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
         imgUrl: "http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png",
         success: function () {
