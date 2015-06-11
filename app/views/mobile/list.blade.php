@@ -101,7 +101,7 @@ wx.ready(function(){
     wx.onMenuShareTimeline({
         title: '快来给你的朋友点歌吧!', // 分享标题
         link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
-        imgUrl: imgUrl + "/share.png",
+        imgUrl: "http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png",
         success: function () {
             alert('分享成功!');// 用户确认分享后执行的回调函数
         },
