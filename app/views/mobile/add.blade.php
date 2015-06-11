@@ -21,15 +21,15 @@
         <div class="form">
             <div class="form-group formTitle">
                 <label class="control-label" for="song" >我要点的歌名</label>
-                <input class="form-title form-control" id="song" type="text" placeholder="30字以内" size="35" maxlength="24"/>
+                <input class="form-title form-control" id="song" type="text" placeholder="30字以内" size="35" maxlength="30"/>
             </div>
             <div class="form-group formControl">
                 <label class="control-label" for="singer">演唱者</label>
-                <input class="form-title form-control" id="singer" type="text" placeholder="25个字以内" size="35" maxlength="12"/>
+                <input class="form-title form-control" id="singer" type="text" placeholder="25个字以内" size="35" maxlength="25"/>
             </div>
             <div class="form-group formControl">
                 <label class="control-label" for="toSomeBody">对方名字</label>
-                <input class="form-title form-control" id="toSomeBody" type="text" placeholder="15个字以内" size="35" maxlength="12"/>
+                <input class="form-title form-control" id="toSomeBody" type="text" placeholder="15个字以内" size="35" maxlength="15"/>
             </div>
             <div class="form-group formControl">
                 <label class="control-label" for="control">我还想说的话</label>
