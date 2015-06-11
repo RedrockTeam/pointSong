@@ -29,7 +29,7 @@
             </div>
             <div class="form-group formControl">
                 <label class="control-label" for="toSomeBody">对方名字</label>
-                <input class="form-title form-control" id="toSomeBody" type="text" placeholder="6个字以内" size="35" maxlength="12"/>
+                <input class="form-title form-control" id="toSomeBody" type="text" placeholder="15个字以内" size="35" maxlength="12"/>
             </div>
             <div class="form-group formControl">
                 <label class="control-label" for="control">我还想说的话</label>
