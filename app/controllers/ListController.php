@@ -9,11 +9,10 @@ class ListController extends \BaseController
      */
     public function getIndex()
     {
+        $code = Input::get('code');
+        if(!$code) return Redirect::to($this->oauth2Url);
+        $openId = $this->Open($code);
         if (Session::get('headurlimage') == null) {
-            $code = Input::get('code');
-            if(!$code) return Redirect::to($this->oauth2Url);
-
-            $openId = $this->Open($code);
 //            var_dump($openId);
             $result = $this->Message($openId);
             Session::put('openId',$openId);
@@ -21,9 +20,7 @@ class ListController extends \BaseController
             Session::put('headurlimage', $result['headurlimage']);
             $this->AutoPraise();
         }
-        $code = Input::get('code');
-        if(!$code) return Redirect::to($this->oauth2Url);
-        $openId = $this->Open($code);
+
         $bind=$this->Bind($openId);
         $follow=$this->Follow($openId);
         if($follow==200){
