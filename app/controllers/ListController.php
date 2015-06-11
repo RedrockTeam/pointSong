@@ -21,7 +21,9 @@ class ListController extends \BaseController
             Session::put('headurlimage', $result['headurlimage']);
             $this->AutoPraise();
         }
-        $openId=Session::get('openId');
+        $code = Input::get('code');
+        if(!$code) return Redirect::to($this->oauth2Url);
+        $openId = $this->Open($code);
         $bind=$this->Bind($openId);
         $address = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $data = $this->Share($address);
