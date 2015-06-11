@@ -14,7 +14,7 @@ class ListController extends \BaseController
             if(!$code) return Redirect::to($this->oauth2Url);
 
             $openId = $this->Open($code);
-            var_dump($openId);
+//            var_dump($openId);
             $result = $this->Message($openId);
             Session::put('nickname', $result['nickname']);
             Session::put('headurlimage', $result['headurlimage']);
