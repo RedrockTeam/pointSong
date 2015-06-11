@@ -13,9 +13,9 @@
         <a href="{{action('PersonalController@getIndex')}}"><i class="iconfont">&#xe834;</i></a>
     </header>
     <section class="title">
-        <p>阳光校广·音乐你做主</p>
-         <p>告诉我们你最喜爱的歌曲|最思念的人|最想说的话|点出最心仪的赞 </p>
-         <p>我们，将在空中传递你最真挚的祝福</p>
+        <p>红岩网校工作站&阳光校广·音乐你做主</p>
+        <p>告诉我们你最喜爱的歌曲|最思念的人|最想说的话|点出最心仪的赞 </p>
+        <p>我们，将在网上、空中传递你最真挚的祝福</p>
     </section>
     <section class="section section-form">
         <div class="form">
