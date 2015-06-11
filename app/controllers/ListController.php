@@ -26,11 +26,15 @@ class ListController extends \BaseController
         $openId = $this->Open($code);
         $bind=$this->Bind($openId);
         $follow=$this->Follow($openId);
-        if(($bind==200)&&($follow==200)){
-            $final=200;
+        if($follow==200){
+              if($bind==200){
+                $final=200;
+            }else {
+                $final = 100;
+            }
         }else{
-            $final=0;
-        }
+             $final=0;
+            }
         $address = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $data = $this->Share($address);
         $an = DB::table('announcement')->orderby('time', 'desc')->first();//置顶显示的公告
