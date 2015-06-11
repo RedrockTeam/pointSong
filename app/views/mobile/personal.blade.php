@@ -52,35 +52,37 @@
 <script src="{{__PUBLIC__.'/js/mobile/swiper.jquery.min.js'}}"></script>
 <script src="{{__PUBLIC__.'/js/mobile/personal.js'}}"></script>
 <script src="{{__PUBLIC__.'/js/mobile/hammer.js'}}"></script>
+<script src="{{__PUBLIC__.'/js/weixin.js'}}"></script>
+
 <script>
 $(document).ready(function() {
-    $.ajax({
-        url: " {{action('PersonalController@getShow')}}",
-        type: "get",
-        data:{perNum:0},
-        dataType: "json",
-        contentType: "application/json;charset=utf-8",
-        success: function (msg) {
-            for (var j = 0; j < msg.length; j++) {
-                music(acceptedObj, {
-                    "id": msg[j].id,
-                    "img": msg[j].img,
-                    "music": msg[j].music.split("|")[0],
-                    "singer": msg[j].music.split("|")[1],
-                    "me": msg[j].nickname,
-                    "time": msg[j].datetime,
-                    "you": msg[j].recieve_name,
-                    "content": msg[j].content,
-                    "greatNum": msg[j].goods,
-                    "great": msg[j].isPraise,
-                    "accept": true
-                });
-            }
-        },
-        error: function (xhr) {
-err(dat);
+$.ajax({
+    url: " {{action('PersonalController@getShow')}}",
+    type: "get",
+    data:{perNum:0},
+    dataType: "json",
+    contentType: "application/json;charset=utf-8",
+    success: function (msg) {
+        for (var j = 0; j < msg.length; j++) {
+            music(acceptedObj, {
+                "id": msg[j].id,
+                "img": msg[j].img,
+                "music": msg[j].music.split("|")[0],
+                "singer": msg[j].music.split("|")[1],
+                "me": msg[j].nickname,
+                "time": msg[j].datetime,
+                "you": msg[j].recieve_name,
+                "content": msg[j].content,
+                "greatNum": msg[j].goods,
+                "great": msg[j].isPraise,
+                "accept": true
+            });
         }
-    });
+    },
+    error: function (xhr) {
+        err(dat);
+    }
+});
 
 
 $.ajax({
@@ -107,13 +109,52 @@ $.ajax({
             }
         },
         error: function (xhr) {
-err(dat);
+            err(dat);
         }
     });
+});
+var  perDelete="{{action('PersonalController@getDelete')}}";
+var  perPraise="{{action('ListController@getPraise')}}";
+var  perDisplay="{{action('PersonalController@getDisplay')}}";
+var imgUrl="{{__PUBLIC__.'/img'}}";
+
+wx.ready(function(){
+    wx.onMenuShareTimeline({
+        title: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享标题
+        link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+        imgUrl: "http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png",
+        success: function () {
+            alert('分享成功!');// 用户确认分享后执行的回调函数
+        },
+        cancel: function () {// 用户取消分享后执行的回调函数
+        }
     });
-    var  perDelete="{{action('PersonalController@getDelete')}}";
-        var  perPraise="{{action('ListController@getPraise')}}";
-        var  perDisplay="{{action('PersonalController@getDisplay')}}";
- var imgUrl="{{__PUBLIC__.'/img'}}";
+    wx.onMenuShareAppMessage({
+        title: '重邮点歌台', // 分享标题
+        desc: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享描述
+        link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+        imgUrl: 'http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png', // 分享图标
+        type: '', // 分享类型,music、video或link，不填默认为link
+        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        success: function () {
+            alert('分享成功!');// 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    wx.onMenuShareQQ({
+        title: '重邮点歌台', // 分享标题
+        desc: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享描述
+        link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+        imgUrl: 'http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png', // 分享图标
+        success: function () {
+            alert('分享成功!');// 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+});
     </script>
 </html>

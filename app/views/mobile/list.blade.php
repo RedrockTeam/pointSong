@@ -107,7 +107,33 @@ wx.ready(function(){
         },
         cancel: function () {// 用户取消分享后执行的回调函数
         }
-    })
+    });
+    wx.onMenuShareAppMessage({
+        title: '重邮点歌台', // 分享标题
+        desc: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享描述
+        link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+        imgUrl: 'http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png', // 分享图标
+        type: '', // 分享类型,music、video或link，不填默认为link
+        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        success: function () {
+            alert('分享成功!');// 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    wx.onMenuShareQQ({
+        title: '重邮点歌台', // 分享标题
+        desc: '我在重邮点歌台为你点了歌，你要来听吗？', // 分享描述
+        link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=http%3A%2F%2Fhongyan.cqupt.edu.cn%2FpointSong%2Fpublic%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+        imgUrl: 'http://hongyan.cqupt.edu.cn/pointSong/public/img/share.png', // 分享图标
+        success: function () {
+            alert('分享成功!');// 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
 });
 </script>
 </html>
