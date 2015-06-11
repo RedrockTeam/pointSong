@@ -299,7 +299,7 @@ class ListController extends \BaseController {
 }
 
 
-    public function Open(){
+    public function Open($code){
         $url = "http://Hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/Api/Api/webOAuth";
         $timestamp = time();
         $string = "";
