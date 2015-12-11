@@ -35,4 +35,4 @@ Route::group(array('before' => 'admin_is_login'),function(){
   //前台页面
 Route::controller('personal','PersonalController');
 
-  Route::controller('/','ListController@getIndex');
+  Route::controller('/','ListController');
