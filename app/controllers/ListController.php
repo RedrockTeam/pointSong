@@ -10,7 +10,10 @@ class ListController extends \BaseController
     public function getIndex()
     {
         $code = Input::get('code');
-        if(!$code) return Redirect::to($this->oauth2Url);
+        if(!$code) {
+            $redirect = urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+            return Redirect::to("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx81a4a4b77ec98ff4&redirect_uri=$redirect&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
+        }
         $openId = $this->Open($code);
         if (Session::get('headurlimage') == null) {
 //            var_dump($openId);
