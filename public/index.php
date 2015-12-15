@@ -46,6 +46,6 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 |
 */
 $path = explode('/',$_SERVER['SCRIPT_NAME']);
-define("__PUBLIC__",'http://'.$_SERVER['HTTP_HOST'].'/'.$path[1]);
+define("__PUBLIC__",'https://'.$_SERVER['HTTP_HOST'].'/'.$path[1]);
 
 $app->run();
