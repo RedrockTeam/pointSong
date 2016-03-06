@@ -188,16 +188,16 @@ public function getUse(){
         $range = $now - ($time - 1) * 24 * 60 * 60;
         $range = strtotime(date('Y-m-d', $range));
         if($order==1){           /*该歌曲点击次数*/
-            $list = DB::table('music')->select("id","music", DB::raw('sum(goods) as excellentNum'),DB::raw('count(*) as musicTime' ),DB::raw('sum(goods) *0.4+count(*)*0.6 as comprehensive'))->where("time", ">=", $range)->orderby('musicTime', 'DESC')->groupby('music')->skip($sapage)->take(10)->get();
+            $list = DB::table('music')->select("music", DB::raw('sum(goods) as excellentNum'),DB::raw('count(*) as musicTime' ),DB::raw('sum(goods) *0.4+count(*)*0.6 as comprehensive'))->where("time", ">=", $range)->orderby('musicTime', 'DESC')->groupby('music')->skip($sapage)->take(10)->get();
         }
          elseif($order==2) {          /*该歌曲累计点赞数*/
-        $list = DB::table('music')->select("id","music", DB::raw('sum(goods) as excellentNum'),DB::raw('count(*) as musicTime' ),DB::raw('sum(goods) *0.4+count(*)*0.6 as comprehensive'))->where("time", ">=", $range)->orderby("excellentNum", "DESC")->groupby('music')->skip($sapage)->take(10)->get();
+        $list = DB::table('music')->select("music", DB::raw('sum(goods) as excellentNum'),DB::raw('count(*) as musicTime' ),DB::raw('sum(goods) *0.4+count(*)*0.6 as comprehensive'))->where("time", ">=", $range)->orderby("excellentNum", "DESC")->groupby('music')->skip($sapage)->take(10)->get();
         }
         elseif($order==3){          /*该歌曲综合热门度*/
-        $list = DB::table('music')->select("id","music", DB::raw('sum(goods) as excellentNum'),DB::raw('count(*) as musicTime' ),DB::raw('sum(goods) *0.4+count(*)*0.6 as comprehensive'))->where("time", ">=", $range)->orderby("comprehensive", "DESC")->groupby('music')->skip($sapage)->take(10)->get();
+        $list = DB::table('music')->select("music", DB::raw('sum(goods) as excellentNum'),DB::raw('count(*) as musicTime' ),DB::raw('sum(goods) *0.4+count(*)*0.6 as comprehensive'))->where("time", ">=", $range)->orderby("comprehensive", "DESC")->groupby('music')->skip($sapage)->take(10)->get();
         }
         else{                          /*默认排序*/
-        $list = DB::table('music')->select("id","music", DB::raw('sum(goods) as excellentNum'),DB::raw('count(*) as musicTime' ),DB::raw('sum(goods) *0.4+count(*)*0.6 as comprehensive'))->where("time", ">=", $range)->groupby('music')->skip($sapage)->take(10)->get();
+        $list = DB::table('music')->select("music", DB::raw('sum(goods) as excellentNum'),DB::raw('count(*) as musicTime' ),DB::raw('sum(goods) *0.4+count(*)*0.6 as comprehensive'))->where("time", ">=", $range)->groupby('music')->skip($sapage)->take(10)->get();
 
           }
 
